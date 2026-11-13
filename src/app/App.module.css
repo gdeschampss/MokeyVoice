@@ -1,0 +1,16 @@
+.splash {
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: var(--bg-side);
+}
+.splashLogo {
+  width: 96px;
+  animation: breathe 1.4s ease-in-out infinite;
+}
+@keyframes breathe {
+  50% {
+    opacity: 0.55;
+    transform: scale(0.97);
+  }
+}

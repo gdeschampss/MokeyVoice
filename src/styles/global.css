@@ -1,0 +1,159 @@
+/* =========================================================
+   MonkeyVoice — tokens de design
+   Núcleo da marca: #2C2F33 · #23272A · #99AAB5
+   Acentos: #5E5C97 (ação) · #924E4E / #5A3232 (perigo, ao vivo)
+   ========================================================= */
+:root {
+  /* superfícies, do mais fundo ao mais alto */
+  --bg-deep: #1e2124; /* painel do usuário, inputs, área de call */
+  --bg-side: #23272a; /* sidebars (canais e membros) */
+  --bg-main: #2c2f33; /* área de conversa */
+  --bg-raised: #34383c; /* hover forte, cards */
+  --bg-floating: #191b1d; /* popovers, menus, tooltips */
+  --line: rgba(153, 170, 181, 0.12);
+  --line-strong: rgba(153, 170, 181, 0.22);
+
+  --hover: rgba(153, 170, 181, 0.08);
+  --active: rgba(153, 170, 181, 0.16);
+
+  /* texto */
+  --text: #dcdfe2;
+  --text-strong: #f2f3f5;
+  --text-muted: #99aab5;
+  --text-faint: #6d7b85;
+
+  /* acentos */
+  --accent: #5e5c97;
+  --accent-hover: #6c6aa8;
+  --accent-soft: rgba(94, 92, 151, 0.22);
+  --danger: #924e4e;
+  --danger-hover: #a35a5a;
+  --danger-deep: #5a3232;
+  --online: #3ba55c;
+  --speaking: #3ba55c;
+
+  /* tipografia */
+  --font: 'Noto Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-s: 0.875rem;
+  --fs-m: 1rem;
+  --fs-l: 1.25rem;
+
+  /* medidas */
+  --sidebar-w: 248px;
+  --members-w: 248px;
+  --header-h: 48px;
+  --r-s: 4px;
+  --r-m: 8px;
+  --r-l: 12px;
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.3);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-deep);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--fs-m);
+  line-height: 1.375;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: #8fa8ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-hover);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+/* scrollbars finas, como no Discord */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1a1c1f transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #1a1c1f;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
