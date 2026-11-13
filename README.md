@@ -1,3 +1,6 @@
+<img width="500" height="500" alt="MonkeyVoice" src="https://github.com/user-attachments/assets/1a12b3f8-d594-43df-8c67-b9d45b1ab4ed" />
+
+
 # MonkeyVoice — Chat dos Macacos
 
 Chat de voz, texto e transmissão de tela para o bando. Um servidor só, uma senha só.
